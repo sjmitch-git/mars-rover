@@ -5,15 +5,24 @@ type GridPropsX = Omit<GridProps, "y">;
 type GridPropsY = Omit<GridProps, "x">;
 
 export const setPlateauGrid = (x: number, y: number) => {
+  if (x <= 0 || y <= 0) {
+    throw new Error("Please enter a number greater than zero.");
+  }
   Grid.x = x;
   Grid.y = y;
 };
 
 export const setPlateauGridX = (x: number) => {
+  if (x <= 0) {
+    throw new Error("Please enter a number greater than zero.");
+  }
   Grid.x = x;
 };
 
 export const setPlateauGridY = (y: number) => {
+  if (y <= 0) {
+    throw new Error("Please enter a number greater than zero.");
+  }
   Grid.y = y;
 };
 

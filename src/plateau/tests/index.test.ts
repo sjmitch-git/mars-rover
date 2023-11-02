@@ -15,6 +15,10 @@ describe("test setPlateauGrid function", () => {
     expect(Grid.x).toBe(10);
     expect(Grid.y).toBe(8);
   });
+
+  it("should throw an error for negative values", () => {
+    expect(() => setPlateauGrid(-10, 8)).toThrow("Please enter a number greater than zero.");
+  });
 });
 
 describe("test setPlateauGridX function", () => {
@@ -22,12 +26,18 @@ describe("test setPlateauGridX function", () => {
     setPlateauGridX(16);
     expect(Grid.x).toBe(16);
   });
+  it("should throw an error for negative values", () => {
+    expect(() => setPlateauGridX(-10)).toThrow("Please enter a number greater than zero.");
+  });
 });
 
 describe("test setPlateauGridY function", () => {
   it("should set Grid.y to 6 when calling setPlateauGridY(6)", () => {
     setPlateauGridY(6);
     expect(Grid.y).toBe(6);
+  });
+  it("should throw an error for negative values", () => {
+    expect(() => setPlateauGridY(-10)).toThrow("Please enter a number greater than zero.");
   });
 });
 
