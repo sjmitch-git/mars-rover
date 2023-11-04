@@ -1,5 +1,4 @@
 import { RoverService as Rover } from "../services";
-import { GridService as Grid } from "../services";
 import { RoverProps } from "../rover/types";
 
 const isMovement = (input: string): input is RoverProps["movement"] => {
