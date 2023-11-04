@@ -1,24 +1,37 @@
-import { RoverService as Rover } from "../services";
+import { RoverService as Rover, GridService as Grid } from "../services";
 import { RoverProps } from "../rover/types";
 
 const isMovement = (input: string): input is RoverProps["movement"] => {
   return ["M"].includes(input);
 };
 
+const error = () => {
+  throw new Error(`Rover has stopped at x:${Rover.x} y:${Rover.y}! Edge of grid has been reached.`);
+};
+
 const moveRover = () => {
-  switch (Rover.orientation) {
-    case "N":
+  const actions = {
+    N: () => {
+      if (Rover.y === Grid.y) error();
       ++Rover.y;
-      break;
-    case "S":
+    },
+    S: () => {
+      if (Rover.y === 0) error();
       --Rover.y;
-      break;
-    case "E":
+    },
+    E: () => {
+      if (Rover.x === Grid.x) error();
       ++Rover.x;
-      break;
-    case "W":
+    },
+    W: () => {
+      if (Rover.x === 0) error();
       --Rover.x;
-      break;
+    },
+  };
+
+  const action = actions[Rover.orientation];
+  if (action) {
+    action();
   }
 };
 
