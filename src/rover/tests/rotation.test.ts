@@ -39,6 +39,11 @@ describe("test setOrientation function", () => {
     setOrientation("R");
     expect(Rover.orientation).toBe("W");
   });
+  it(`should return error message when input is invalid`, () => {
+    expect(() => setOrientation("X")).toThrow(
+      "Invalid rotation value. Please provide either 'L' or 'R'."
+    );
+  });
 });
 
 // GET rover orientation
