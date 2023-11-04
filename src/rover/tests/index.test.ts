@@ -24,6 +24,8 @@ describe("test setOrientation function", () => {
   it("should set orientation from S to E", () => {
     Rover.orientation = "S";
     setOrientation("R");
+    setOrientation("R");
+    setOrientation("R");
     expect(Rover.orientation).toBe("E");
   });
   it("should set orientation from S to N", () => {
@@ -35,8 +37,6 @@ describe("test setOrientation function", () => {
   it("should set orientation from S to W", () => {
     Rover.orientation = "S";
     setOrientation("R");
-    setOrientation("R");
-    setOrientation("R");
     expect(Rover.orientation).toBe("W");
   });
 });
@@ -46,6 +46,6 @@ describe("test getOrientation function", () => {
   it("should return the current rover orientation", () => {
     Rover.orientation = "S";
     setOrientation("R");
-    expect(getOrientation()).toEqual("E");
+    expect(getOrientation()).toEqual("W");
   });
 });
