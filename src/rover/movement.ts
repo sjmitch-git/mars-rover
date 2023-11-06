@@ -1,9 +1,4 @@
 import { RoverService as Rover, GridService as Grid } from "../services";
-import { RoverProps } from "../rover/types";
-
-const isMovement = (input: string): input is RoverProps["movement"] => {
-  return ["M"].includes(input);
-};
 
 const error = () => {
   throw new Error(`Rover has stopped at x:${Rover.x} y:${Rover.y}! Edge of grid has been reached.`);
@@ -35,9 +30,6 @@ const moveRover = () => {
   }
 };
 
-export const setMovement = (movement: string) => {
-  if (!isMovement(movement)) {
-    throw new Error("Invalid movement value. Please provide 'M'.");
-  }
+export const setMovement = () => {
   moveRover();
 };

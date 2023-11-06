@@ -16,7 +16,7 @@ export const setInstructions = (instructions: string) => {
         setOrientation("R");
         break;
       case "M":
-        setMovement("M");
+        setMovement();
         break;
       default:
         error(instruction);
