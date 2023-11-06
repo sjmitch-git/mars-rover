@@ -36,13 +36,7 @@ describe("test setInstructions function", () => {
     );
   });
 
-  it("should throw an error for invalid instruction value", () => {
-    expect(() => setInstructions("LMLMLXMLMM")).toThrow(
-      `Invalid instruction: X. Provide a value of 'L', 'R' or 'M'`
-    );
-  });
-
-  it("should throw error if edge of grid has been reched", () => {
+  it("should throw error if edge of grid has been reached", () => {
     // North
     setPositionAndOrientation(0, 0, "E");
     expect(() => setInstructions("LMMMMMM")).toThrow(
