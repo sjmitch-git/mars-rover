@@ -1,8 +1,8 @@
 import { GridProps } from "./types";
 import { GridService as Grid } from "../services";
 
-type GridPropsX = Omit<GridProps, "y">;
-type GridPropsY = Omit<GridProps, "x">;
+type GridPropsX = Pick<GridProps, "x">;
+type GridPropsY = Pick<GridProps, "y">;
 
 export const setPlateauGrid = (x: number, y: number) => {
   if (x <= 0 || y <= 0) {
