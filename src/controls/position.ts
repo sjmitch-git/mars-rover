@@ -20,7 +20,7 @@ export const setPositionAndOrientation = (x: number, y: number, orientation: str
   }
 
   if (!isOrientation(orientation)) {
-    throw new Error("Invalid orientation value. Please provide one of 'N', 'E', 'S' or 'E'.");
+    throw new Error("Invalid orientation value. Please provide one of 'N', 'E', 'S' or 'W'.");
   }
 
   Rover.x = x;

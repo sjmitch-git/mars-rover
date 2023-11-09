@@ -35,7 +35,7 @@ describe("test setPositionAndOrientation function", () => {
 
   it("should throw an error for invalid orientation value", () => {
     expect(() => setPositionAndOrientation(0, 0, "X")).toThrow(
-      "Invalid orientation value. Please provide one of 'N', 'E', 'S' or 'E'."
+      "Invalid orientation value. Please provide one of 'N', 'E', 'S' or 'W'."
     );
   });
 });
